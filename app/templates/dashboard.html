@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <p>
+        <a href="/new_workout">Add a Workout</a>
+    </p>
+    <div>
+        <!--context vars: all_workouts, this_user-->
+        <table>
+            <tr>
+                <th>Workouts</th>
+                <th>Description</th>
+                <th>Created By</th>
+            </tr>
+            <tr>
+                {% for workout in all_workouts %}
+                <td><a href="/workouts/{{workout.id}}">{{workout.name}}</a></td>
+                <!-- possibly make this into designating an area of the body -->
+                <td>{{ workout.description }}</td>
+                <!--figure out a way to make this work-->
+                <td><a href="/profile/{{workout.workout_creator.id}}">
+                        {{workout.workout_creator.email}}</a></td>
+                {% if workout.workout_creator.id == this_user.id %}
+                <td>
+                    <a href="/workouts/edit/{{workout.id}}">Edit</a>
+                    <a href="/delete/{{workout.id}}">Delete</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p><a href="/logout">Logout</a></p>
+
+</body>
+
+</html>

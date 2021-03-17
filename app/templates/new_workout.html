@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Add a Workout</h1>
+        <form action="/add_workout" method="POST">
+            {% csrf_token %}
+            <p>
+                <label for="name">Name Your Workout</label>
+                <input type="text" name="name">
+            </p>
+            <p>
+                <label for="description">Description</label>
+                <input type="text" name="description">
+            </p>
+            <p>
+                <label for="set1">Set 1</label>
+                <input type="text" name="set1">
+            </p>
+            <p>
+                <label for="weight1">#</label>
+                <input type="number" name="weight1">
+            </p>
+            <p>
+                <label for="set2">Set 2</label>
+                <input type="text" name="set2">
+            </p>
+            <p>
+                <label for="weight2">#</label>
+                <input type="number" name="weight2">
+            </p>
+            <p>
+                <label for="set3">Set 3</label>
+                <input type="text" name="set3">
+            </p>
+            <p>
+                <label for="weight3">#</label>
+                <input type="number" name="weight3">
+            </p>
+            <p>
+                <label for="set4">Set 4</label>
+                <input type="text" name="set4">
+            </p>
+            <p>
+                <label for="weight4">#</label>
+                <input type="number" name="weight4">
+            </p>
+            <p>
+                <label for="set5">Set 5</label>
+                <input type="text" name="set5">
+            </p>
+            <p>
+                <label for="weight5">#</label>
+                <input type="number" name="weight5">
+            </p>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <p><a href="/dashboard">Home</a></p>
+</body>
+
+</html>

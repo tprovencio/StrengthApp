@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--context vars: 'this_user'-->
+    <h1>{{this_user.email}}</h1>
+    {% for workouts in this_user.workouts.all %}
+    <h2><a href="/workouts/{{workouts.id}}">{{workouts.name}}</a></h2>
+    {% endfor %}
+    <p><a href="/dashboard">Home</a></p>
+</body>
+
+</html>
